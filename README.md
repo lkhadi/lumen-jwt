@@ -1,5 +1,5 @@
 ## Lumen PHP Framework
-COPY OR RENAME .env.example to .env
+COPY OR RENAME .env.example to .env<br>
 RUN composer update
 
 ## JWT
