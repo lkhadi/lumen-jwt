@@ -5,7 +5,7 @@ RUN composer update
 RUN php artisan jwt:secret
 
 ## CorsMiddleware
-EDIT CorsMiddleware
+EDIT CorsMiddleware<br>
 $allowedOrigins = [getenv("APP_EXTERNAL_URL1"), getenv("APP_EXTERNAL_URL2"), getenv("APP_EXTERNAL_URL3")];
 
 ## SUPERVISOR FOR QUEUE (OPTIONAL)
@@ -17,13 +17,13 @@ RUN sudo supervisorctl update<br>
 RUN sudo supervisorctl start "myapp-worker:*"
 
 ## ENABLE EMAIL (OPTIONAL)
-Uncomment these lines in the bootstrap/app.php file.
-$app->configure('mail');
+Uncomment these lines in the bootstrap/app.php file.<br>
+$app->configure('mail');<br>
 
-$app->alias('mail.manager', Illuminate\Mail\MailManager::class);
-$app->alias('mail.manager', Illuminate\Contracts\Mail\Factory::class);
+$app->alias('mail.manager', Illuminate\Mail\MailManager::class);<br>
+$app->alias('mail.manager', Illuminate\Contracts\Mail\Factory::class);<br>
 
-$app->alias('mailer', Illuminate\Mail\Mailer::class);
-$app->alias('mailer', Illuminate\Contracts\Mail\Mailer::class);
-$app->alias('mailer', Illuminate\Contracts\Mail\MailQueue::class);
-$app->register(Illuminate\Mail\MailServiceProvider::class);
+$app->alias('mailer', Illuminate\Mail\Mailer::class);<br>
+$app->alias('mailer', Illuminate\Contracts\Mail\Mailer::class);<br>
+$app->alias('mailer', Illuminate\Contracts\Mail\MailQueue::class);<br>
+$app->register(Illuminate\Mail\MailServiceProvider::class);<br>
