@@ -2,16 +2,24 @@
 
 namespace App\Jobs;
 
-class ExampleJob extends Job
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Bus\Queueable;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
+
+class ExampleJob implements ShouldQueue
 {
+    use InteractsWithQueue, Queueable, SerializesModels;
+
+    protected $ifNeeded;
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($ifNeeded)
     {
-        //
+        $this->ifNeeded = $ifNeeded;
     }
 
     /**
